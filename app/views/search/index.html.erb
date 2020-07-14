@@ -3,10 +3,10 @@
 
   <% @members.each do |member| %>
     <ul class= "member">
-      <h3>Name: <%= member[:name]%></h3>
-      <p>Photo: <img src=<%= member[:photoUrl] if !nil %>></p>
-      <p>Affiliation: <%= member[:affiliation]%></p>
-      <p>Enemies: <%= member[:enemies]%></p>
-      <p>Allies: <%= member[:allies]%></p>
+      <h3 class="name">Name: <%= member[:name]%></h3>
+      <p class="photo">Photo: <img src=<%= member[:photoUrl] if !nil %>></p>
+      <p class="affiliation">Affiliation: <%= member[:affiliation]%></p>
+      <p class="enemies">Enemies: <%= member[:enemies]%></p>
+      <p class="allies">Allies: <%= member[:allies]%></p>
     </ul>
   <% end %>
