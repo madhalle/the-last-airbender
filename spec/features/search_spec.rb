@@ -13,7 +13,8 @@ RSpec.describe "when visiting the home page" do
       # find(:fire_nation, element_nation, "select-field").select_option
       click_on "Search For Members"
       expect(current_path).to eq("/search")
-      expect(page).to 
+      expect(page).to have_content("20 Fire Nation Members")
+      expect(page).to have_css(".member", count:20)
     # end
   end
 end
