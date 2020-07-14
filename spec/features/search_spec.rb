@@ -4,9 +4,17 @@ RSpec.describe "when visiting the home page" do
   it "a user can search for nation members" do
     visit "/"
 
-    select :fire_nation, :from => "select-field"
-    # find(:nation, "select-field", :fire_nation).select_option
-    click_on "Search For Members"
+    # within(".collapse navbar-collapse") do
+    find("#bs-example-navbar-collapse-1").find(:option, "Fire Nation").select_option
+    # find(".nav navbar-nav", option:[value='Fire Nation']).select_option
+      # select("Fire Nation", from: ".nav navbar-nav")
+      # find(:css, ".select-field").find(:fire_nation, "Fire Nation").select_option
+      # find(:css, "#select-field").select(:fire_nation, :from => "select-field").select_option
+      # find(:fire_nation, element_nation, "select-field").select_option
+      click_on "Search For Members"
+      expect(current_path).to eq("/search")
+      expect(page).to 
+    # end
   end
 end
 
